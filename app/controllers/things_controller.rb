@@ -20,6 +20,18 @@ class ThingsController < ApplicationController
       end
     end
 
+    def edit
+      @thing = Thing.find(params[:id])
+    end
+
+    def update
+      @thing =  Thing.find(params[:id])
+      if @thing.update(page_params)
+      else
+        render :edit
+      end
+    end
+    
     private
 
     def things_params

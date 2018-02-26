@@ -3,4 +3,6 @@
 <% @things.each do |thing| %>
     <h2><%= thing.title %></h2>
     <%= link_to 'Show Thing', thing_path(thing) %>
+    <%= link_to 'Edit Thing', edit_thing_path(thing) %>
+
 <% end %>
