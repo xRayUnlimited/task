@@ -1,0 +1,11 @@
+<h1>Edit Your Thing</h1>
+<%= form_for @thing do |f| %>
+    <%= f.lable :title %>
+    <%= f.text_field :title %>
+<p></p>
+    <%= f.datetime_select :date %>    
+<p></p>
+    <%= f.select :finished %>
+<p></p>
+    <%= f.submit %>
+<%= end %>

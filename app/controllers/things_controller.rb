@@ -8,11 +8,11 @@ class ThingsController < ApplicationController
     end
 
     def new
-      @thing = Things.new
+      @thing = Thing.new
     end
 
     def create
-      @thing = Things.new(thing_params)
+      @thing = Thing.new(thing_params)
       if @thing.save
         redirect_to things_path
       else
@@ -31,7 +31,12 @@ class ThingsController < ApplicationController
         render :edit
       end
     end
-    
+
+    def destroy
+      Thing.find(params[:id]).destroy
+      redirect_to things_path
+    end
+
     private
 
     def things_params
